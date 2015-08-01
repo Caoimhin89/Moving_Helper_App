@@ -31,10 +31,6 @@ function loadData() {
             $nytElem.append("<li class='article'>" + "<a href='" + article.web_url + "'>" + article.headline.main + "</a>" + "<p>" + article.snippet + "</p>" + "</li>");
         };
         
-        $("<ul id='nytimes-articles'></ul>", {
-            "class": "article";
-            html.items.join("")
-        }).appendTo(body);
         console.log(data);
     });
 
