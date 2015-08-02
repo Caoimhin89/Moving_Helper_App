@@ -40,9 +40,9 @@ function loadData() {
         $nytHeaderElem.text("New York Times Articles Could Not Be Loaded");
     });
 
-     var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + cityStr + '&format=json&callback=wikiCallback';
+     var wikiUrl = "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + cityStr + "&format=json&callback=wikiCallback";
     var wikiRequestTimeout = setTimeout(function(){
-        $wikiElem.text("failed to get wikipedia resources");
+        $wikiElem.text("Failed to retrieve wikipedia articles");
     }, 8000);
 
     $.ajax({
@@ -54,8 +54,8 @@ function loadData() {
 
             for (var i = 0; i < articleList.length; i++) {
                 articleStr = articleList[i];
-                var url = 'http://en.wikipedia.org/wiki/' + articleStr;
-                $wikiElem.append('<li><a href="' + url + '">' + articleStr + '</a></li>');
+                var url = "http://en.wikipedia.org/wiki/" + articleStr;
+                $wikiElem.append("<li><a href='" + url + "'>" + articleStr + "</a></li>");
             };
 
             clearTimeout(wikiRequestTimeout);
